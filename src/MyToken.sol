@@ -13,11 +13,10 @@ contract MyToken is ERC20, Ownable {
     /// @dev 固定 18 位小数（与 ETH 一致，方便心算）
     uint8 private constant DECIMALS = 18;
 
-    constructor(
-        string memory name_,
-        string memory symbol_,
-        uint256 initialSupply_
-    ) ERC20(name_, symbol_) Ownable(msg.sender) {
+    constructor(string memory name_, string memory symbol_, uint256 initialSupply_)
+        ERC20(name_, symbol_)
+        Ownable(msg.sender)
+    {
         _mint(msg.sender, initialSupply_);
     }
 
