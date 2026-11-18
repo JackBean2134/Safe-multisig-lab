@@ -43,7 +43,9 @@ contract MultiSigWallet {
         threshold = _threshold;
     }
 
-    receive() external payable { emit Deposit(msg.sender, msg.value); }
+    receive() external payable {
+        emit Deposit(msg.sender, msg.value);
+    }
 
     function submit(address to, uint256 value, bytes calldata data) external onlyOwner returns (uint256 txId) {
         txId = transactions.length;
@@ -65,11 +67,16 @@ contract MultiSigWallet {
         require(!txn.executed, "already executed");
         require(txn.confirmations >= threshold, "below threshold");
         txn.executed = true;
-        (bool ok, ) = txn.to.call{value: txn.value}(txn.data);
+        (bool ok,) = txn.to.call{value: txn.value}(txn.data);
         require(ok, "call failed");
         emit Execute(txId);
     }
 
-    function getOwners() external view returns (address[] memory) { return owners; }
-    function getTransactionCount() external view returns (uint256) { return transactions.length; }
+    function getOwners() external view returns (address[] memory) {
+        return owners;
+    }
+
+    function getTransactionCount() external view returns (uint256) {
+        return transactions.length;
+    }
 }
