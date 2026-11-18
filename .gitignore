@@ -1,0 +1,14 @@
+# 依赖（用 forge install 恢复，不入库）
+lib/
+# 编译产物
+out/
+cache/
+# 环境变量与私钥（严禁提交）
+.env
+.env.local
+# Node（scripts/）
+node_modules/
+scripts/.env
+# 编辑器
+.vscode/
+.idea/

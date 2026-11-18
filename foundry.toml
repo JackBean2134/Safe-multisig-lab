@@ -1,0 +1,6 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.24"
+# 国内网络拉取依赖慢时，可在命令前加：FOUNDRY_GIT_PROXY=https://127.0.0.1:7890 forge install ...

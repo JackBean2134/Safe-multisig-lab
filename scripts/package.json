@@ -1,0 +1,23 @@
+{
+  "name": "safe-multisig-lab-scripts",
+  "version": "1.0.0",
+  "description": "Optional Viem / Safe Protocol Kit examples for the Safe 2-of-3 lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "encode": "tsx encode-calldata.ts",
+    "create-safe": "tsx create-safe.ts",
+    "propose-withdraw": "tsx propose-withdraw.ts"
+  },
+  "dependencies": {
+    "@safe-global/api-kit": "^5.0.4",
+    "@safe-global/protocol-kit": "^8.0.11",
+    "dotenv": "^16.4.5",
+    "viem": "^2.52.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
